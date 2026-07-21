@@ -1,15 +1,12 @@
-name: React Demo Build
-on:
-  push:
-    branches:
-      - main
+name: React Demo for Pull Request
 
+on:
   pull_request:
     branches:
       - main
 
 jobs:
-  build:
+  pr-lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -26,6 +23,3 @@ jobs:
 
       - name: Run linting on the code
         run: npm run lint
-
-      - name: Build the React application
-        run: npm run build
